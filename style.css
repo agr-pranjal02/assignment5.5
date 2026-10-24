@@ -1,0 +1,209 @@
+
+/* Assignment 5.4: CSS Variables and Design Tokens */
+
+:root {
+    /* Color tokens */
+    --primary-color: #6c4cf1;
+    --secondary-color: #18a999;
+    --background-color: #f7f7fc;
+    --text-color: #25243a;
+    --muted-color: #77758b;
+    --white-color: #ffffff;
+
+    /* Spacing tokens */
+    --space-small: 8px;
+    --space-medium: 16px;
+    --space-large: 32px;
+
+    /* Typography tokens */
+    --font-small: 14px;
+    --font-medium: 18px;
+    --font-large: 36px;
+
+    /* Other reusable tokens */
+    --radius: 14px;
+    --shadow: 0 6px 20px rgba(37, 36, 58, 0.08);
+}
+
+/* Global styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-medium) var(--space-large);
+    background-color: var(--white-color);
+}
+
+.navbar h1 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: var(--font-large);
+}
+
+.navbar nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: var(--space-medium);
+    font-size: var(--font-small);
+}
+
+.navbar nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 70px var(--space-medium);
+    background-color: var(--white-color);
+}
+
+.tag {
+    color: var(--secondary-color);
+    font-size: var(--font-small);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h2 {
+    font-size: var(--font-large);
+    line-height: 1.2;
+    color: var(--primary-color);
+}
+
+.hero p {
+    max-width: 550px;
+    margin: var(--space-medium) auto;
+    color: var(--muted-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: var(--radius);
+    padding: var(--space-small) var(--space-large);
+    font-size: var(--font-small);
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Features */
+#features {
+    padding: var(--space-large);
+    max-width: 1150px;
+    margin: auto;
+}
+
+#features > h2,
+.contact h2 {
+    font-size: var(--font-large);
+    text-align: center;
+}
+
+.section-description {
+    text-align: center;
+    color: var(--muted-color);
+    margin-bottom: var(--space-large);
+}
+
+/* Cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-medium);
+}
+
+.card {
+    flex: 1;
+    min-width: 220px;
+    background-color: var(--white-color);
+    padding: var(--space-large);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.card h3 {
+    color: var(--primary-color);
+    font-size: var(--font-medium);
+}
+
+.card p {
+    color: var(--muted-color);
+    font-size: var(--font-small);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    border: none;
+    padding: var(--space-small) var(--space-medium);
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+/* Contact section */
+.contact {
+    margin: var(--space-large);
+    padding: var(--space-large);
+    text-align: center;
+    background-color: var(--white-color);
+    border-radius: var(--radius);
+}
+
+.contact p {
+    color: var(--muted-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: var(--space-medium);
+    font-size: var(--font-small);
+}
+
+/* Small screen layout */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: var(--space-small);
+    }
+
+    .navbar nav a {
+        margin: 0 var(--space-small);
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    #features {
+        padding: var(--space-medium);
+    }
+}
